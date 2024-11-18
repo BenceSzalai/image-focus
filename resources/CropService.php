@@ -145,6 +145,20 @@ class CropService
 
             // Now execute the actual image crop
             $this->cropImage($imageSize, $imageFilePath);
+	        
+			$attachmentId = $this->attachment['id'];
+			
+	        /**
+	         * This action is called after an image has been cropped.
+	         *
+	         * @since 0.10.1
+	         *
+	         * @param int $attachmentId The ID of the attachment cropped.
+	         * @param array $imageSize The array describing the image size data in the format as returned by {@see wp_get_additional_image_sizes()}.
+	         * @param string $imageFilePath The path of the file just cropped.
+	         * @param CropService $this The instance of the current CropService class.
+	         */
+	        do_action('image_focus_image_cropped', $attachmentId, $imageSize, $imageFilePath, $this);
         }
     }
 
