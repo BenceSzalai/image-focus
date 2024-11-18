@@ -8,7 +8,7 @@ namespace ImageFocus;
  * Class EditService
  * @package ImageFocus
  */
-class EditService
+class ResizeService
 {
     private $focusPoint = [
         'x' => 50,
