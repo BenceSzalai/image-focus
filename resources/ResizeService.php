@@ -25,7 +25,7 @@ class ResizeService
 
     /**
      * Catch the wp_update_attachment_metadata filter.
-     * And make sure all the resizing goes trough the ImageFocus crop service.
+     * And make sure all the resizing goes through the ImageFocus crop service.
      *
      * @param $data
      * @param $attachmentId
@@ -39,7 +39,7 @@ class ResizeService
         if (!empty($metaData)) {
             $focusPoint = get_post_meta($attachmentId, 'focus_point', true);
 
-            // Crop the attachment trough the crop service
+            // Crop the attachment through the crop service
             $crop = new CropService();
             $crop->crop($attachmentId, $focusPoint);
         }
