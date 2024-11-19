@@ -44,7 +44,7 @@ class ImageFocus
      * We could use `init` or even earlier `plugins_loaded`, but since we don't rely on any
      * WordPress functionality that is loaded later, we can just instantiate the service directly.
      *
-     * @since 0.10.1
+     * @since 0.10.2
      */
     public function loadEarlyClasses()
     {
