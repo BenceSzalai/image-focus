@@ -1,0 +1,2 @@
+<?php
+return ['domain'=>NULL,'plural-forms'=>'nplurals=2; plural=(n != 1);','language'=>'nl','project-id-version'=>'acf-gravityforms-addon','pot-creation-date'=>'2017-06-02 01:29+0200','po-revision-date'=>'2017-06-02 01:29+0200','x-generator'=>'Poedit 1.8.11','messages'=>['Crop image'=>'Afbeelding bijsnijden']];
