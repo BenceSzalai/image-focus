@@ -243,6 +243,12 @@ class CropService
             $imageFilePath
         );
 
+		// NewPath can be a WP_Error for example if the image format is not cropable by WP, like for an SVG.
+		if ( !is_string($newPath) ) {
+			error_log('Image Focus: CropService::cropImage(): Could not crop image. ' . print_r([$imageSize, $imageFilePath,$newPath], true));
+			return $this;
+		}
+
         // Since WP 5.4 wp_crop_image always generates a -1.png unique path for image subsizes
         // @see https://github.com/WordPress/WordPress/commit/15a566edef8afe6dc1f23a841bd557a8cecf35d1
         // We copy the newly created file over to the old path and then remove the new one.
